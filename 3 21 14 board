@@ -1,0 +1,42 @@
+# HW 9 Sudoku
+
+# The checker
+
+all little boxes are entry fields
+
+make this board same way as tic tac toe board, except entries, not buttons
+
+board = []
+for row in range(9):
+    board.append([])
+    for col in range(9):
+        e = Entry(root, ....)
+        e.grid(row = ..., col = ....)
+        board[row].append(e)
+
+
+# board check
+
+def checkBoard():
+    loop over all rows:
+        loop over all cols:
+            with entry at [row][col]:
+            if checkcell(row, col):
+                # ok
+            else:
+                # there's a problem, quit checkboard
+
+
+def checkCell(row,col):
+    value = board[row][col].get text from this entry field
+    need to :
+        check row and column and cluster to make sure no duplicates
+        if all ok, cell is ok, return true
+        if any are false, return false
+
+def checkRow(row, value):
+    count = 0
+    for col in range(9):
+        if board[row][col].get() == value:
+            count+=1
+    return count==1
